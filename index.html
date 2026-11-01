@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Клинок, рассекающий демонов</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Шапка: кнопка меню, логотип, справа переключатель языка -->
+    <header class="header">
+      <button class="menu-button" id="menuButton" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="logo" id="logo">
+        <span class="logo-mark">
+          <span class="logo-slash"></span>
+          <span class="logo-kanji">鬼滅の刃</span>
+        </span>
+      </div>
+
+      <!-- Переключатель языка: ползунок стоит под текущим языком -->
+      <button
+        class="lang-switch"
+        id="langButton"
+        type="button"
+        role="switch"
+        aria-checked="false"
+        aria-label="Язык"
+      >
+        <span class="lang-knob"></span>
+        <span class="lang-side lang-side-ru" id="langFlagRu"></span>
+        <span class="lang-side lang-side-uz" id="langFlagUz"></span>
+      </button>
+    </header>
+
+    <!-- Подзаголовок с красным акцентом -->
+    <div class="hero">
+      <p class="hero-text" data-i18n="slogan">Смотри. Сражайся. Не сдавайся.</p>
+      <div class="hero-line"></div>
+    </div>
+
+    <!-- Полоса выбора сезона, по центру -->
+    <nav class="seasons-bar" id="seasonsBar">
+      <div class="seasons-inner">
+        <button class="season-tab active" data-season="1" data-i18n="season1">Сезон 1</button>
+        <button class="season-tab" data-season="2" data-i18n="season2">Сезон 2</button>
+        <button class="season-tab" data-season="3" data-i18n="season3">Сезон 3</button>
+        <button class="season-tab" data-season="4" data-i18n="season4">Сезон 4</button>
+        <button class="season-tab" data-season="specials" data-i18n="specials">Спешалы</button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Главная: сетка серий выбранного сезона (карточки добавляет script.js) -->
+      <section class="episodes-grid" id="episodesGrid"></section>
+
+      <!-- Страница просмотра -->
+      <section class="watch-page hidden" id="watchPage">
+        <div class="player-area">
+          <video id="player" playsinline></video>
+          <h2 class="now-playing" id="nowPlaying"></h2>
+        </div>
+        <aside class="episodes-sidebar" id="episodesSidebar"></aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
